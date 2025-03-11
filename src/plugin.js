@@ -14,7 +14,7 @@ const getShortName = (file, root) => {
 	return file;
 };
 
-const defaultPaths = ['./app/**/*.json', './public/app.json'];
+const defaultPaths = ['./app/**/*.json', './app/**/*.js', './app/**/*.jsx', './public/app.json'];
 
 const getPathsAndOverrides = () => {
 	try {
@@ -38,8 +38,10 @@ const getPathsAndOverrides = () => {
 				return;
 
 			let ePath = ensemble.path.replace(/\\/g, '/');
-			ePath = ePath.endsWith('/') ? `${ePath}**/*.json` : `${ePath}/**/*.json`;
-			paths.push(ePath);
+			ePath = ePath.endsWith('/') ? `${ePath}**/*` : `${ePath}/**/*`;
+			paths.push(`${ePath}.json`);
+			paths.push(`${ePath}.js`);
+			paths.push(`${ePath}.jsx`);
 
 			ensembleOverrides.push(ensemble);
 		});
