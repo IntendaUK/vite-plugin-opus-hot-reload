@@ -1,6 +1,6 @@
 {
 	"name": "@intenda/vite-plugin-opus-hot-reload",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Vite plugin for Opus UI Hot Reload",
 	"homepage": "https://opus-ui.com",
 	"keywords": [
